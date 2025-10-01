@@ -1,0 +1,34 @@
+# <type>(<scope>): <subject> (Max 50 chars)
+# |<----  Using a maximum of 50 characters  ---->|
+
+# Explain why this change is being made
+# |<----   Try to limit each line to 72 characters   ---->|
+
+# Provide links or keys to any relevant tickets, articles or resources
+# Example: Closes #23
+
+# --- COMMIT END ---
+# Type can be:
+#   feat     - New feature
+#   fix      - Bug fix
+#   docs     - Documentation changes
+#   style    - Formatting, missing semicolons, etc; no code change
+#   refactor - Refactoring code without changing functionality
+#   perf     - Performance improvements
+#   test     - Adding or updating tests
+#   chore    - Maintenance tasks, dependency updates
+#   revert   - Reverting a previous commit
+#
+# Scope is optional and can be anything specifying the place of the commit change.
+# Examples: ui, api, auth, components, hooks, etc.
+#
+# Subject should use imperative mood: "change" not "changed" nor "changes"
+# Don't capitalize first letter
+# No period at the end
+#
+# Body should explain the motivation for the change and contrast with previous behavior
+#
+# Footer should contain any breaking changes or closing issues
+# Breaking changes should start with "BREAKING CHANGE:"
+# Closing issues should be listed as "Closes #123, #456"
+# --------------------
