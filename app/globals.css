@@ -11,28 +11,99 @@
   --card-foreground: oklch(0.25 0 0); /* #374151 - Slightly lighter text on cards */
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
-  --primary: oklch(0.38 0.127 264); /* #1E40AF - Deep automotive blue */
+  --primary: oklch(0.65 0.20 40); /* Shop Tool Orange - Primary brand */
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.55 0 0); /* #71717A - Gunmetal gray */
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.95 0.01 247); /* #F3F4F6 - Subtle background */
   --muted-foreground: oklch(0.45 0.01 257); /* #6B7280 - Softer text */
-  --accent: oklch(0.62 0.21 27); /* #EA580C - Performance orange accent */
+  --accent: oklch(0.55 0.15 250); /* Engine Metal Blue - Accent */
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.54 0.22 27); /* #DC2626 - Error red */
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.92 0.004 247); /* #E5E7EB - Subtle borders */
   --input: oklch(1 0 0);
-  --ring: oklch(0.38 0.127 264 / 0.15); /* Primary with transparency */
+  --ring: oklch(0.65 0.20 40 / 0.15); /* Primary with transparency */
   --radius: 0.75rem; /* Slightly larger radius for modern feel */
   --sidebar: oklch(0.99 0 0);
   --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: oklch(0.38 0.127 264);
+  --sidebar-primary: oklch(0.65 0.20 40);
   --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.55 0 0);
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.92 0.004 247);
-  --sidebar-ring: oklch(0.38 0.127 264 / 0.15);
+  --sidebar-ring: oklch(0.65 0.20 40 / 0.15);
+
+  /* Buddy's DIY Brand Colors - Shop Heritage */
+  --brand-50: oklch(0.98 0.02 40);
+  --brand-100: oklch(0.95 0.05 40);
+  --brand-200: oklch(0.88 0.10 40);
+  --brand-300: oklch(0.78 0.15 40);
+  --brand-400: oklch(0.71 0.18 40);
+  --brand-500: oklch(0.65 0.20 40); /* Primary - Shop Orange #ff4500 */
+  --brand-600: oklch(0.57 0.20 40);
+  --brand-700: oklch(0.48 0.18 40);
+  --brand-800: oklch(0.37 0.15 40);
+  --brand-900: oklch(0.27 0.12 40);
+
+  /* Accent Colors - Mechanical Blue */
+  --accent-50: oklch(0.97 0.01 250);
+  --accent-100: oklch(0.94 0.03 250);
+  --accent-200: oklch(0.88 0.06 250);
+  --accent-300: oklch(0.78 0.10 250);
+  --accent-400: oklch(0.68 0.13 250);
+  --accent-500: oklch(0.55 0.15 250); /* Mechanical Blue */
+  --accent-600: oklch(0.45 0.15 250);
+  --accent-700: oklch(0.38 0.13 250);
+  --accent-800: oklch(0.28 0.10 250);
+  --accent-900: oklch(0.20 0.07 250);
+
+  /* Surface Colors - Carbon Fiber & Workshop Grays */
+  --surface-50: oklch(0.99 0 0);
+  --surface-100: oklch(0.97 0 0);
+  --surface-200: oklch(0.93 0 0);
+  --surface-300: oklch(0.87 0 0);
+  --surface-400: oklch(0.70 0 0);
+  --surface-500: oklch(0.53 0 0);
+  --surface-600: oklch(0.42 0 0);
+  --surface-700: oklch(0.32 0 0);
+  --surface-800: oklch(0.22 0 0);
+  --surface-900: oklch(0.14 0 0);
+  --surface-950: oklch(0.08 0 0);
+
+  /* Semantic Colors */
+  --success: oklch(0.65 0.17 145); /* Green flag */
+  --warning: oklch(0.75 0.15 85); /* Caution yellow */
+  --error: oklch(0.58 0.22 25); /* Red flag */
+
+  /* YouTube Brand */
+  --youtube: oklch(0.57 0.24 25);
+
+  /* Typography Variables */
+  --font-size-display-xl: clamp(3rem, 8vw, 5rem);
+  --font-size-display-lg: clamp(2.5rem, 6vw, 4rem);
+  --font-size-display-md: clamp(2rem, 5vw, 3rem);
+  --font-size-heading-xl: clamp(1.75rem, 3vw, 2.25rem);
+  --font-size-heading-lg: clamp(1.5rem, 2.5vw, 1.875rem);
+  --font-size-heading-md: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-body-xl: 1.25rem;
+  --font-size-body-lg: 1.125rem;
+  --font-size-body-md: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+
+  /* Shadow System */
+  --shadow-brand-sm: 0 1px 3px 0 oklch(0.65 0.20 40 / 0.1);
+  --shadow-brand-md: 0 4px 6px -1px oklch(0.65 0.20 40 / 0.15);
+  --shadow-brand-lg: 0 10px 15px -3px oklch(0.65 0.20 40 / 0.2);
+  --shadow-brand-glow: 0 0 20px oklch(0.65 0.20 40 / 0.3);
+  --shadow-accent-glow: 0 0 20px oklch(0.55 0.15 250 / 0.3);
 }
 
 .dark {
@@ -43,27 +114,27 @@
   --card-foreground: oklch(0.92 0 0);
   --popover: oklch(0.12 0 0);
   --popover-foreground: oklch(0.92 0 0);
-  --primary: oklch(0.52 0.2 264); /* #3B82F6 - Brighter blue for dark mode */
-  --primary-foreground: oklch(1 0 0);
+  --primary: oklch(0.72 0.22 40); /* Brighter Shop Orange for dark mode */
+  --primary-foreground: oklch(0.08 0 0);
   --secondary: oklch(0.4 0 0); /* #52525B - Medium gray */
   --secondary-foreground: oklch(0.95 0 0);
   --muted: oklch(0.2 0 0); /* #27272A - Muted backgrounds */
   --muted-foreground: oklch(0.65 0 0); /* #A1A1AA - Softer text */
-  --accent: oklch(0.7 0.25 27); /* #FB923C - Brighter orange for dark mode */
-  --accent-foreground: oklch(0.08 0 0);
+  --accent: oklch(0.62 0.17 250); /* Brighter Mechanical Blue for dark mode */
+  --accent-foreground: oklch(0.95 0 0);
   --destructive: oklch(0.6 0.25 27); /* #EF4444 - Bright error red */
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.22 0 0); /* #3F3F46 - Subtle borders */
   --input: oklch(0.16 0 0); /* #27272A - Input backgrounds */
-  --ring: oklch(0.52 0.2 264 / 0.25); /* Primary with more transparency */
+  --ring: oklch(0.72 0.22 40 / 0.25); /* Primary with more transparency */
   --sidebar: oklch(0.1 0 0);
   --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.52 0.2 264);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.72 0.22 40);
+  --sidebar-primary-foreground: oklch(0.08 0 0);
   --sidebar-accent: oklch(0.4 0 0);
   --sidebar-accent-foreground: oklch(0.95 0 0);
   --sidebar-border: oklch(0.22 0 0);
-  --sidebar-ring: oklch(0.52 0.2 264 / 0.25);
+  --sidebar-ring: oklch(0.72 0.22 40 / 0.25);
 }
 
 @theme inline {
@@ -100,6 +171,49 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand color mappings */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+
+  /* Accent color mappings */
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+
+  /* Surface color mappings */
+  --color-surface-50: var(--surface-50);
+  --color-surface-100: var(--surface-100);
+  --color-surface-200: var(--surface-200);
+  --color-surface-300: var(--surface-300);
+  --color-surface-400: var(--surface-400);
+  --color-surface-500: var(--surface-500);
+  --color-surface-600: var(--surface-600);
+  --color-surface-700: var(--surface-700);
+  --color-surface-800: var(--surface-800);
+  --color-surface-900: var(--surface-900);
+  --color-surface-950: var(--surface-950);
+
+  /* Semantic color mappings */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-youtube: var(--youtube);
 }
 
 @layer base {
@@ -125,7 +239,7 @@
     @apply font-bold tracking-tight;
   }
 
-  /* Animation utilities */
+  /* Animation keyframes */
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -134,6 +248,17 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 
@@ -148,17 +273,53 @@
     }
   }
 
+  @keyframes shimmer {
+    from {
+      background-position: -200% 0;
+    }
+    to {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Animation utilities */
   .animate-fade-in {
     animation: fade-in 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
   }
 
   .animate-scale-in {
     animation: scale-in 0.3s ease-out;
   }
 
-  /* Gradient text utility */
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  /* Brand utilities */
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-brand {
+    @apply bg-gradient-to-r from-brand-500 to-brand-600;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600;
   }
 
   /* Glass morphism utility */
@@ -166,12 +327,62 @@
     @apply bg-background/50 backdrop-blur-md border border-border/50;
   }
 
-  /* Premium shadow utilities */
+  /* Shadow utilities */
   .shadow-premium {
     box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
   }
 
   .shadow-premium-lg {
     box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-brand {
+    box-shadow: var(--shadow-brand-md);
+  }
+
+  .shadow-brand-sm {
+    box-shadow: var(--shadow-brand-sm);
+  }
+
+  .shadow-brand-lg {
+    box-shadow: var(--shadow-brand-lg);
+  }
+
+  .shadow-brand-glow {
+    box-shadow: var(--shadow-brand-glow);
+  }
+
+  .shadow-accent-glow {
+    box-shadow: var(--shadow-accent-glow);
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .hover-lift-brand {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-brand-glow;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-scale-in,
+    .animate-shimmer,
+    .animate-spin-slow,
+    .animate-bounce {
+      animation: none !important;
+    }
   }
 }
