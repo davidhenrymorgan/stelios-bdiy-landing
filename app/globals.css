@@ -362,7 +362,12 @@
   }
 
   .hover-lift-brand {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-brand-glow;
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift-brand:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-brand-glow);
   }
 
   /* Reduced motion support */
