@@ -4,65 +4,66 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match Buddy's DIY brand */
-  --background: oklch(1 0 0); /* #ffffff */
-  --foreground: oklch(0.42 0.01 257); /* #475569 */
-  --card: oklch(0.96 0.002 247); /* #f1f5f9 */
-  --card-foreground: oklch(0.42 0.01 257); /* #475569 */
-  --popover: oklch(1 0 0); /* #ffffff */
-  --popover-foreground: oklch(0.42 0.01 257); /* #475569 */
-  --primary: oklch(0.577 0.245 27.325); /* #D32F2F - Buddy's red */
-  --primary-foreground: oklch(1 0 0); /* #ffffff */
-  --secondary: oklch(0.62 0.17 163); /* #10b981 */
-  --secondary-foreground: oklch(1 0 0); /* #ffffff */
-  --muted: oklch(0.96 0.002 247); /* #f1f5f9 */
-  --muted-foreground: oklch(0.42 0.01 257); /* #475569 */
-  --accent: oklch(0.62 0.17 163); /* #10b981 */
-  --accent-foreground: oklch(1 0 0); /* #ffffff */
-  --destructive: oklch(0.658 0.194 35); /* Orange warning color */
-  --destructive-foreground: oklch(1 0 0); /* #ffffff */
-  --border: oklch(0.91 0.002 247); /* #e5e7eb */
-  --input: oklch(1 0 0); /* #ffffff */
-  --ring: oklch(0.5 0 0 / 0.1); /* rgba(0, 0, 0, 0.1) */
-  --radius: 0.5rem;
-  --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.42 0.01 257);
-  --sidebar-primary: oklch(0.577 0.245 27.325); /* Buddy's red */
+  /* Premium color palette - Sophisticated automotive theme */
+  --background: oklch(0.99 0 0); /* #FAFAF9 - Off-white for softer feel */
+  --foreground: oklch(0.15 0 0); /* #1F2937 - Deep charcoal for text */
+  --card: oklch(1 0 0); /* Pure white for cards */
+  --card-foreground: oklch(0.25 0 0); /* #374151 - Slightly lighter text on cards */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.38 0.127 264); /* #1E40AF - Deep automotive blue */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.55 0 0); /* #71717A - Gunmetal gray */
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.95 0.01 247); /* #F3F4F6 - Subtle background */
+  --muted-foreground: oklch(0.45 0.01 257); /* #6B7280 - Softer text */
+  --accent: oklch(0.62 0.21 27); /* #EA580C - Performance orange accent */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.54 0.22 27); /* #DC2626 - Error red */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.004 247); /* #E5E7EB - Subtle borders */
+  --input: oklch(1 0 0);
+  --ring: oklch(0.38 0.127 264 / 0.15); /* Primary with transparency */
+  --radius: 0.75rem; /* Slightly larger radius for modern feel */
+  --sidebar: oklch(0.99 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.38 0.127 264);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.62 0.17 163);
+  --sidebar-accent: oklch(0.55 0 0);
   --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.91 0.002 247);
-  --sidebar-ring: oklch(0.5 0 0 / 0.1);
+  --sidebar-border: oklch(0.92 0.004 247);
+  --sidebar-ring: oklch(0.38 0.127 264 / 0.15);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.577 0.245 27.325); /* Buddy's red in dark mode */
-  --primary-foreground: oklch(1 0 0); /* White text on red */
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.62 0.17 163);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.658 0.194 35); /* Orange warning color */
+  /* Premium dark mode - Rich blacks with depth */
+  --background: oklch(0.08 0 0); /* #0A0A0B - Rich black */
+  --foreground: oklch(0.95 0 0); /* #F1F5F9 - Soft white */
+  --card: oklch(0.12 0 0); /* #18181B - Elevated card background */
+  --card-foreground: oklch(0.92 0 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.92 0 0);
+  --primary: oklch(0.52 0.2 264); /* #3B82F6 - Brighter blue for dark mode */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.4 0 0); /* #52525B - Medium gray */
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.2 0 0); /* #27272A - Muted backgrounds */
+  --muted-foreground: oklch(0.65 0 0); /* #A1A1AA - Softer text */
+  --accent: oklch(0.7 0.25 27); /* #FB923C - Brighter orange for dark mode */
+  --accent-foreground: oklch(0.08 0 0);
+  --destructive: oklch(0.6 0.25 27); /* #EF4444 - Bright error red */
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.577 0.245 27.325); /* Buddy's red */
+  --border: oklch(0.22 0 0); /* #3F3F46 - Subtle borders */
+  --input: oklch(0.16 0 0); /* #27272A - Input backgrounds */
+  --ring: oklch(0.52 0.2 264 / 0.25); /* Primary with more transparency */
+  --sidebar: oklch(0.1 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.52 0.2 264);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar-accent: oklch(0.4 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.22 0 0);
+  --sidebar-ring: oklch(0.52 0.2 264 / 0.25);
 }
 
 @theme inline {
@@ -106,6 +107,71 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Premium focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Better text rendering */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Animation utilities */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Glass morphism utility */
+  .glass {
+    @apply bg-background/50 backdrop-blur-md border border-border/50;
+  }
+
+  /* Premium shadow utilities */
+  .shadow-premium {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+  }
+
+  .shadow-premium-lg {
+    box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.2);
   }
 }
