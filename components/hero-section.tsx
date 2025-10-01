@@ -1,22 +1,109 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
+import { useMutation } from "convex/react"
+import { api } from "@/convex/_generated/api"
+import confetti from "canvas-confetti"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Loader2, CheckCircle2, AlertCircle } from "lucide-react"
+import { trackEvent, getUTMParams, getReferrer, getUserAgent } from "@/lib/analytics"
+
+type FormState = "idle" | "loading" | "success" | "error"
 
 export function HeroSection() {
   const [firstName, setFirstName] = useState("")
   const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formState, setFormState] = useState<FormState>("idle")
+  const [errorMessage, setErrorMessage] = useState("")
+  const [successMessage, setSuccessMessage] = useState("")
+  const firstInputRef = useRef<HTMLInputElement>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const captureEmail = useMutation(api.emails.captureEmail)
+
+  // Auto-focus first field on mount
+  useEffect(() => {
+    firstInputRef.current?.focus()
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Add email submission logic
-    console.log("Form submitted:", { firstName, email })
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    setFormState("loading")
+    setErrorMessage("")
+
+    // Track attempt
+    trackEvent("email_capture_attempt", "engagement", "landing_hero")
+
+    try {
+      const result = await captureEmail({
+        firstName: firstName.trim(),
+        email: email.trim(),
+        source: "landing_hero",
+        utmParams: getUTMParams(),
+        referrer: getReferrer(),
+        userAgent: getUserAgent(),
+      })
+
+      if (result.success) {
+        setFormState("success")
+        setSuccessMessage(result.message)
+
+        // Fire confetti!
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        })
+
+        // Track success
+        trackEvent("email_captured_success", "conversion", "landing_hero", undefined, {
+          signup_id: result.signupId,
+        })
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFirstName("")
+          setEmail("")
+          setFormState("idle")
+          setSuccessMessage("")
+        }, 5000)
+      } else {
+        setFormState("error")
+        setErrorMessage(result.message)
+
+        // Track specific error type
+        trackEvent(
+          result.code === "ALREADY_SUBSCRIBED" ? "email_capture_duplicate" : "email_capture_error",
+          result.code === "ALREADY_SUBSCRIBED" ? "engagement" : "error",
+          "landing_hero",
+          undefined,
+          { error_code: result.code }
+        )
+
+        // Clear error after 5 seconds
+        setTimeout(() => {
+          setFormState("idle")
+          setErrorMessage("")
+        }, 5000)
+      }
+    } catch (error) {
+      setFormState("error")
+      setErrorMessage("Something went wrong. Please try again.")
+      trackEvent("email_capture_error", "error", "landing_hero", undefined, {
+        error: error instanceof Error ? error.message : "Unknown error"
+      })
+
+      setTimeout(() => {
+        setFormState("idle")
+        setErrorMessage("")
+      }, 5000)
+    }
   }
+
+  const isLoading = formState === "loading"
+  const isSuccess = formState === "success"
+  const isError = formState === "error"
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -102,12 +189,14 @@ export function HeroSection() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-3">
                   <Input
+                    ref={firstInputRef}
                     type="text"
                     placeholder="First Name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     required
-                    className="h-12 text-base bg-background/70 border-border/50 focus:border-primary transition-colors"
+                    disabled={isLoading || isSuccess}
+                    className="h-12 text-base bg-background/70 border-border/50 focus:border-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     aria-label="First Name"
                   />
                   <Input
@@ -116,16 +205,46 @@ export function HeroSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-12 text-base bg-background/70 border-border/50 focus:border-primary transition-colors"
+                    disabled={isLoading || isSuccess}
+                    className="h-12 text-base bg-background/70 border-border/50 focus:border-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     aria-label="Email Address"
+                    aria-invalid={isError}
+                    aria-describedby={isError ? "email-error" : undefined}
                   />
                 </div>
+
+                {/* Error Message */}
+                {isError && errorMessage && (
+                  <div
+                    id="email-error"
+                    role="alert"
+                    className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/20 rounded-lg text-destructive text-sm"
+                  >
+                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
+                {/* Success Message */}
+                {isSuccess && successMessage && (
+                  <div
+                    role="alert"
+                    className="flex items-center gap-2 p-3 bg-accent/10 border border-accent/20 rounded-lg text-accent text-sm"
+                  >
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                    <span>{successMessage}</span>
+                  </div>
+                )}
+
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base transition-all duration-200 shadow-lg hover:shadow-xl"
+                  disabled={isLoading || isSuccess}
+                  className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitted ? "You're on the List!" : "Reserve My Spot"}
+                  {isLoading && <Loader2 className="w-5 h-5 mr-2 animate-spin" />}
+                  {isSuccess && <CheckCircle2 className="w-5 h-5 mr-2" />}
+                  {isLoading ? "Joining..." : isSuccess ? "You're In! 🎉" : "Reserve My Spot"}
                 </Button>
               </form>
 
