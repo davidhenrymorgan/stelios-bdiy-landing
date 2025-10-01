@@ -1,3 +1,8 @@
+# Stelios BDIY Landing Page
+
+![CI/CD](https://github.com/davidhenrymorgan/stelios-bdiy-landing/workflows/CI%2FCD%20Pipeline/badge.svg)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdavidhenrymorgan%2Fstelios-bdiy-landing)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
