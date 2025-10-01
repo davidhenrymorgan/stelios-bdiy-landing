@@ -11,7 +11,7 @@
   --card-foreground: oklch(0.42 0.01 257); /* #475569 */
   --popover: oklch(1 0 0); /* #ffffff */
   --popover-foreground: oklch(0.42 0.01 257); /* #475569 */
-  --primary: oklch(0.52 0.15 166); /* #059669 emerald-600 */
+  --primary: oklch(0.577 0.245 27.325); /* #D32F2F - Buddy's red */
   --primary-foreground: oklch(1 0 0); /* #ffffff */
   --secondary: oklch(0.62 0.17 163); /* #10b981 */
   --secondary-foreground: oklch(1 0 0); /* #ffffff */
@@ -19,7 +19,7 @@
   --muted-foreground: oklch(0.42 0.01 257); /* #475569 */
   --accent: oklch(0.62 0.17 163); /* #10b981 */
   --accent-foreground: oklch(1 0 0); /* #ffffff */
-  --destructive: oklch(0.58 0.2 35); /* #ea580c */
+  --destructive: oklch(0.658 0.194 35); /* Orange warning color */
   --destructive-foreground: oklch(1 0 0); /* #ffffff */
   --border: oklch(0.91 0.002 247); /* #e5e7eb */
   --input: oklch(1 0 0); /* #ffffff */
@@ -27,7 +27,7 @@
   --radius: 0.5rem;
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.42 0.01 257);
-  --sidebar-primary: oklch(0.52 0.15 166);
+  --sidebar-primary: oklch(0.577 0.245 27.325); /* Buddy's red */
   --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.62 0.17 163);
   --sidebar-accent-foreground: oklch(1 0 0);
@@ -42,23 +42,23 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.62 0.17 163);
-  --primary-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.577 0.245 27.325); /* Buddy's red in dark mode */
+  --primary-foreground: oklch(1 0 0); /* White text on red */
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.62 0.17 163);
   --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.58 0.2 35);
+  --destructive: oklch(0.658 0.194 35); /* Orange warning color */
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
   --ring: oklch(0.439 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.62 0.17 163);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.577 0.245 27.325); /* Buddy's red */
+  --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
