@@ -120,6 +120,15 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 lg:py-32">
         <div className="text-center space-y-8">
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/bdiy-logo.svg"
+              alt="Buddy's DIY"
+              className="h-16 md:h-20 w-auto"
+            />
+          </div>
+
           {/* Trust indicators */}
           <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground font-medium">
             <div className="flex items-center gap-2">
